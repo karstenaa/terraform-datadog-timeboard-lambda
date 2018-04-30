@@ -14,22 +14,22 @@ resource "datadog_timeboard" "lambda" {
     autoscale = true
 
     request {
-      q    = "avg:aws.lambda.duration{$function-name} by {functionname}"
+      q    = "avg:aws.lambda.duration{$function_name} by {functionname}"
       type = "line"
     }
 
     request {
-      q    = "avg:aws.lambda.duration.sum{$function-name} by {functionname}"
+      q    = "avg:aws.lambda.duration.sum{$function_name} by {functionname}"
       type = "line"
     }
 
     request {
-      q    = "avg:aws.lambda.duration.maximum{$function-name} by {functionname}"
+      q    = "avg:aws.lambda.duration.maximum{$function_name} by {functionname}"
       type = "line"
     }
 
     request {
-      q    = "avg:aws.lambda.duration.minimum{$function-name} by {functionname}"
+      q    = "avg:aws.lambda.duration.minimum{$function_name} by {functionname}"
       type = "line"
     }
   }
@@ -40,7 +40,7 @@ resource "datadog_timeboard" "lambda" {
     autoscale = true
 
     request {
-      q    = "avg:aws.lambda.errors{$function-name} by {functionname}.as_count()"
+      q    = "avg:aws.lambda.errors{$function_name} by {functionname}.as_count()"
       type = "area"
     }
   }
@@ -51,7 +51,7 @@ resource "datadog_timeboard" "lambda" {
     autoscale = true
 
     request {
-      q    = "avg:aws.lambda.invocations{$function-name} by {functionname}.as_count()"
+      q    = "avg:aws.lambda.invocations{$function_name} by {functionname}.as_count()"
       type = "area"
     }
   }
@@ -62,7 +62,7 @@ resource "datadog_timeboard" "lambda" {
     autoscale = true
 
     request {
-      q    = "avg:aws.lambda.throttles{$function-name} by {functionname}.as_count()"
+      q    = "avg:aws.lambda.throttles{$function_name} by {functionname}.as_count()"
       type = "area"
     }
   }
